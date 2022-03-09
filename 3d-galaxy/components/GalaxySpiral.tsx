@@ -1,5 +1,5 @@
-import React, { useEffect, useMemo, useRef } from "react";
-import { Points, AdditiveBlending, Vector3 } from "three";
+import React, { useMemo, useRef } from "react";
+import { Points, AdditiveBlending } from "three";
 import { useFrame } from "@react-three/fiber";
 import { COUNT, getAttributes } from "../util/util.galaxy";
 import { useBreakpoint } from "../hook/hook.breakpoint";

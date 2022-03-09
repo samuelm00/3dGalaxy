@@ -10,9 +10,12 @@ interface GalaxySpiralProps {
 
 export default function GalaxySpiral({ nrOfSpirals }: GalaxySpiralProps) {
   const points = useRef<Points>();
-  const attributes = useMemo(() => getAttributes(nrOfSpirals, nrOfStars), []);
   const starSize = useBreakpoint(0.03, 0.02);
   const nrOfStars = useBreakpoint(COUNT / 2, COUNT);
+  const attributes = useMemo(
+    () => getAttributes(nrOfSpirals, nrOfStars),
+    [nrOfSpirals, nrOfStars]
+  );
   const rotation = useBreakpoint([Math.PI * 0.3, 0, 0], [Math.PI * 0.25, 0, 0]);
 
   useFrame(({ clock }) => {
